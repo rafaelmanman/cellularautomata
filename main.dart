@@ -63,6 +63,25 @@ void printNewCells(var generations){
   }
 }
 
+List<List<int>> generate(gen_number){  
+  int gen_size = gen_number * 2 + 1;
+  List<int> state = [];
+
+  for (int i=0; i<gen_size; i++) {
+    state.add(0);
+  }
+
+  state[gen_number] = 1;
+
+  nextGeneration(state);
+  List<List<int>> generations = [state];
+  for(int i=0; i<gen_number; i++){
+    List<int> new_state = nextGeneration(state);
+    generations.add(new_state);
+    state = List.from(new_state);
+  }  
+}
+
 void main(){
   int gen_size = 19*5;
   int gen_number = gen_size ~/ 2;

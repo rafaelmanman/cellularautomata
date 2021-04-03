@@ -1,0 +1,7 @@
+#cells {
+  max-height: 800px;
+  max-width: 800px;
+  overflow: scroll;
+  border: 2px solid black;
+  margin-top: 5px;
+}
